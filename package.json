@@ -1,0 +1,29 @@
+{
+  "name": "crond-picker",
+  "version": "0.1.0",
+  "description": "crondate parser formatter and ui picker",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shy2850/crond-picker.git"
+  },
+  "keywords": [
+    "crondate",
+    "react"
+  ],
+  "author": "shy2850",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shy2850/crond-picker/issues"
+  },
+  "homepage": "https://github.com/shy2850/crond-picker#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "f2e-middle-typescript": "^0.3.3",
+    "f2e-server": "^2.13.7",
+    "typescript": "^4.1.3"
+  }
+}
