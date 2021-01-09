@@ -2,8 +2,16 @@
   "name": "crond-picker",
   "version": "0.1.0",
   "description": "crondate parser formatter and ui picker",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
+    "dev": "f2e start -c .f2econfig.dev.js -O",
+    "docs": "f2e build -c .f2econfig.build.js",
+    "tsc": "tsc",
+    "prepublishOnly": "tsc",
     "test": "node test"
   },
   "repository": {
@@ -21,9 +29,14 @@
   },
   "homepage": "https://github.com/shy2850/crond-picker#readme",
   "devDependencies": {
+    "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
-    "f2e-middle-typescript": "^0.3.3",
+    "@types/react-dom": "^17.0.0",
+    "antd": "^4.10.0",
+    "f2e-middle-esbuild": "^0.2.0",
     "f2e-server": "^2.13.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "typescript": "^4.1.3"
   }
 }
