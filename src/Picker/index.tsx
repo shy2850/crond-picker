@@ -5,18 +5,32 @@ import { DownOutlined, UpOutlined } from '@ant-design/icons'
 import { InputProps } from 'antd/lib/input'
 import CronDateItemPicker from './CronDateItemPicker'
 
+export interface CrondPickerRef {
+    dropdown: {
+        open: () => void,
+        close: () => void,
+    }
+}
 export interface CrondPickerProps extends Omit<InputProps, 'onChange'> {
     with_info?: boolean
     value?: string
     onCrondChange?: (crondate: CronDate) => void
     onChange?: (value?: string) => void
+    onInit?: (current: CrondPickerRef) => void
 }
 
 export const CrondPicker = (props: CrondPickerProps) => {
-    const { value, with_info = true, onCrondChange, onChange, onBlur, ...rest } = props
+    const { value, with_info = true, onCrondChange, onChange, onBlur, onInit, ...rest } = props
     const [crondate, setCrondate] = React.useState<CronDate>(null)
     const refInput = React.useRef<Input>()
     const [active, setActive] = React.useState(false)
+
+    onInit && onInit({
+        dropdown: {
+            open: () => setActive(true),
+            close: () => setActive(false)
+        }
+    })
 
     React.useEffect(function () {
         if (value) {
