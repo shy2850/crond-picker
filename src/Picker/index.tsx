@@ -9,7 +9,7 @@ export interface CrondPickerProps extends Omit<InputProps, 'onChange'> {
     with_info?: boolean
     value?: string
     onCrondChange?: (crondate: CronDate) => void
-    onChange?: (value?: string) => void,
+    onChange?: (value?: string) => void
 }
 
 export const CrondPicker = (props: CrondPickerProps) => {
