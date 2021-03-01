@@ -9,7 +9,7 @@ export interface CrondPickerProps extends Omit<InputProps, 'onChange'> {
     with_info?: boolean
     value?: string
     onCrondChange?: (crondate: CronDate) => void
-    onChange?: (value?: string) => void
+    onChange?: (value?: string) => void,
 }
 
 export const CrondPicker = (props: CrondPickerProps) => {
@@ -48,9 +48,9 @@ export const CrondPicker = (props: CrondPickerProps) => {
         }
         _onChange(value)
     }
-
     const dropdown = crondate && <Dropdown
         visible={active}
+        getPopupContainer={triggerNode => triggerNode.parentElement}
         overlayStyle={{
             padding: '12px 4px 12px 12px',
             width: 500,
