@@ -62,9 +62,9 @@ export const CrondPicker = (props: CrondPickerProps) => {
         }
         _onChange(value)
     }
-
     const dropdown = crondate && <Dropdown
         visible={active}
+        getPopupContainer={triggerNode => triggerNode.parentElement}
         overlayStyle={{
             padding: '12px 4px 12px 12px',
             width: 500,
